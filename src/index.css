@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+:root { color-scheme: light; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html { min-width: 320px; scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #f6f7f9; font-family: var(--font-sans); color: #121827; }
+button, input, select { font: inherit; }
+button:not(:disabled) { cursor: pointer; }
+::selection { background: rgba(220, 38, 38, .18); }
+.rate-scroll { scrollbar-width: thin; scrollbar-color: #d7dce3 transparent; }
+.rate-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+.rate-scroll::-webkit-scrollbar-thumb { background: #d7dce3; border-radius: 20px; }
+.soft-grid { background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 32px 32px; }
+.animate-enter { animation: enter .36s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
