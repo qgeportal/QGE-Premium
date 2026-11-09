@@ -411,6 +411,7 @@ function RateCard({row,saved,onFavorite,onCopy,onWhatsApp,index}:{row:RateRow;sa
       {prices.map(price=><div key={price.label} className={"min-w-0 rounded-xl px-3 py-3 " + (price.kind==="installment" ? "bg-red-50" : price.kind==="fix" ? "bg-slate-900" : "bg-slate-50")}>
         <div className={"text-[9px] font-extrabold uppercase tracking-[.11em] " + (price.kind==="installment" ? "text-red-600" : price.kind==="fix" ? "text-red-300" : "text-slate-400")}>{price.label}</div>
         <div className={"mt-1 break-words text-[14px] font-extrabold tabular-nums tracking-tight " + (price.kind==="installment" ? "text-red-700" : price.kind==="fix" ? "text-white" : "text-slate-900")}>{displayRate(price.value)}</div>
+        {price.kind === "installment" && <div className="mt-1.5 text-[8px] font-bold uppercase tracking-[.035em] text-red-500/80">{price.label === "10 installments" ? "10 INSTALLMENT VALUE × 10 = TOTAL" : "15 INSTALLMENT VALUE × 15 = TOTAL"}</div>}
       </div>)}
     </div>
     {row.remarks && <div className="mt-3 rounded-xl bg-amber-50 px-3 py-2 text-[11px] leading-5 text-amber-800">{row.remarks}</div>}
